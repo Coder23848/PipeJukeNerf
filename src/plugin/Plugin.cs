@@ -26,7 +26,7 @@ namespace PipeJukeNerf
             {
                 for (int j = 0; j < self.transportVessels.Count; j++)
                 {
-                    if (i != j && self.transportVessels[i].pos.FloatDist(self.transportVessels[j].pos) <= 1) // It is, in fact, two different creatures, and the creatures are next to each other in the short cut.
+                    if (i != j && self.transportVessels[i].room == self.transportVessels[j].room && self.transportVessels[i].pos.FloatDist(self.transportVessels[j].pos) <= 1) // It is, in fact, two different creatures, and the creatures are next to each other in the short cut.
                     {
                         if (!(self.transportVessels[i].creature == null || self.transportVessels[i].creature.abstractCreature == null || self.transportVessels[i].creature.abstractCreature.abstractAI == null || self.transportVessels[i].creature.abstractCreature.abstractAI.RealAI == null || self.transportVessels[i].creature.abstractCreature.abstractAI.RealAI.tracker == null || self.transportVessels[j].creature == null || self.transportVessels[j].creature.abstractCreature == null))
                         {
